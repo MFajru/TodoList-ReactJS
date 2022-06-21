@@ -10,8 +10,10 @@ const Form = ({
   setEditTodo,
 }) => {
   //Javascript code
-  const updateTodo = (text, id) => {
-    const newTodo = todos.map((todo) => (todo.id === id ? { text, id } : todo));
+  const updateTodo = (text, id, completed) => {
+    const newTodo = todos.map((todo) =>
+      todo.id === id ? { text, id, completed } : todo
+    );
     setTodos(newTodo);
     setEditTodo("");
   };
@@ -37,7 +39,7 @@ const Form = ({
       ]);
       setInputText("");
     } else {
-      updateTodo(inputText, editTodo.id);
+      updateTodo(inputText, editTodo.id, editTodo.completed);
     }
   };
 
