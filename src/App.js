@@ -14,6 +14,7 @@ function App() {
 
   //Use Effect Run once when start
   useEffect(() => {
+    document.title = "Todo List App";
     getLocalTodos();
   }, []);
 
